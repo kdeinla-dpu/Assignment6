@@ -16,6 +16,7 @@ public class BookstoreTest {
     @BeforeAll
     static void setup() {
         playwright = Playwright.create();
+        boolean isCI = System.getenv("CI") != null;
         browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
     }
 
